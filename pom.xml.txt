@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.example.springBootPOC</groupId>
+	<artifactId>springBootPOC</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>springBootPOC</name>
+	<description>Demo project for Spring Boot</description>
+
+	<scm>
+		<connection>scm:git:git@innersource.accenture.com/app_ap/piab-poc-teambandc.git</connection>
+	</scm>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.0.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		 
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring.cloud.version>1.1.4.RELEASE</spring.cloud.version>
+		<javax.ws.rs.version>2.0.1</javax.ws.rs.version>
+		<swagger.ui.version>2.3.1</swagger.ui.version>
+		<cucumber.version>1.2.5</cucumber.version>
+		<mysqlconnector.verison>6.0.5</mysqlconnector.verison>
+		<!-- <sonar.jacoco.itReportPath>${project.baseDir}/../target/jacoco-it.exec</sonar.jacoco.itReportPath> -->
+		
+		<!-- <sonar.language>java</sonar.language> -->
+		<!-- <sonar.host.url>http://my.server:9000</sonar.host.url> -->
+		<jsonwebtoken.version>0.6.0</jsonwebtoken.version>
+		<axiom-api.version>1.2.20</axiom-api.version>
+		<codehaus.mojo>1.12</codehaus.mojo>
+		<commons-lang3.version>3.3.2</commons-lang3.version>
+		<com.spotify.version>0.4.11</com.spotify.version>
+		<maven-deploy-plugin.version>2.7</maven-deploy-plugin.version>
+		<servicename>mahesh</servicename>
+		
+	</properties>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<url>http://app-nexus-piab.magellancloud.com/repository/maven-snapshots/</url>
+		</snapshotRepository> 
+		<repository>
+			<id>nexus-releases</id>
+			<url>http://app-nexus-piab.magellancloud.com/repository/maven-releases/</url>
+		</repository> 
+	</distributionManagement>
+		
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.6.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.6.1</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>${jsonwebtoken.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.ws.commons.axiom</groupId>
+			<artifactId>axiom-api</artifactId>
+			<version>${axiom-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jmockit</groupId>
+			<artifactId>jmockit</artifactId>
+			<version>1.31</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			   
+			   
+			   <!-- <plugin>
+     		 <groupId>org.codehaus.mojo</groupId>
+      			<artifactId>sonar-maven-plugin</artifactId>
+    			  <version>2.7.1</version>
+   				 </plugin> -->
+			   
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
